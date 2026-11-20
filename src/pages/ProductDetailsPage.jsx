@@ -31,8 +31,8 @@ export const ProductDetailsPage = () => {
     .filter((p) => p.id !== product.id && p.category === product.category)
     .slice(0, 4);
 
-  const fallbackRelated = relatedProducts.length > 0 
-    ? relatedProducts 
+  const fallbackRelated = relatedProducts.length > 0
+    ? relatedProducts
     : products.filter((p) => p.id !== product.id).slice(0, 4);
 
   const handleAddToCart = () => {
