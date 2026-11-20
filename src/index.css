@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    @apply bg-[#FDFBF7] text-gray-800 transition-colors duration-200 min-h-screen flex flex-col;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Dark mode background */
+  html.dark body {
+    @apply bg-[#15161A] text-gray-100;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Custom Admin Scrollbar */
+.custom-admin-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-admin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-admin-scrollbar::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 9999px;
+}
+.custom-admin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4B5563;
+}
+
+/* Custom festive styling utilities */
+.festive-gradient {
+  background: linear-gradient(135deg, #7A182D 0%, #C82A2A 50%, #E8590C 100%);
+}
+
+.festive-subtle-bg {
+  background: radial-gradient(circle at top right, rgba(232, 89, 12, 0.08), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(122, 24, 45, 0.08), transparent 40%);
+}
+
+.dark .festive-subtle-bg {
+  background: radial-gradient(circle at top right, rgba(232, 89, 12, 0.12), transparent 45%),
+              radial-gradient(circle at bottom left, rgba(122, 24, 45, 0.15), transparent 45%);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F3EFE6;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #1E2026;
+}
+::-webkit-scrollbar-thumb {
+  background: #C82A2A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7A182D;
+}
+
+/* Hide spin buttons on number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
